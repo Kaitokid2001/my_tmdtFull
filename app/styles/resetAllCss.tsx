@@ -63,9 +63,3 @@ export const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
   }
 `;
-
-export const Fix = styled.div`
-    // max-width: 1170px;
-    background: red;
-    height: 1000px;
-`

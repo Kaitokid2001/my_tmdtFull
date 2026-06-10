@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins} from "next/font/google";
-import {GlobalStyle} from "./resetCss/resetAllCss";
+import {GlobalStyle} from "./styles/resetAllCss";
 import StyledComponentsRegistry from "./lib/registry";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -72,14 +72,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} h-full antialiased`}
+      className={`${poppins.variable} antialiased`}
     >
-      <StyledComponentsRegistry>
-        <GlobalStyle />
-          <body>
+      <body>
+        <StyledComponentsRegistry>
+          <GlobalStyle /> 
             {children}
-          </body>
-      </StyledComponentsRegistry>
+        </StyledComponentsRegistry>
+      </body>
     </html>
   );
 }

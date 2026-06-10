@@ -1,12 +1,30 @@
-import Link from "next/link";
+'use client'
+import Image from "next/image";
+import { 
+    NotFoundDivContainer,
+    NotFoundDivImg,
+    NotFoundContentText,
+    NotFoundContentTextH1,
+    NotFoundContentTextP,
+    NotFoundContentTextSmall,
+    NotFoundContentLink
+ } from "./styles/styleNotFound";
 
 
 export default function NotFound() {
   return (
-    <div>
-        <h1>404 - Not Found</h1>
-        <p>The page you are looking for does not exist.</p>
-        <Link href="/">Go back home</Link>
-    </div>
+    <NotFoundDivContainer>
+        <NotFoundDivImg>
+            <Image src="/bg.jpg" alt="404 Error" width={600} height={400} />
+        </NotFoundDivImg>
+        <NotFoundContentText>
+          <NotFoundContentTextH1>Oops!</NotFoundContentTextH1>
+          <NotFoundContentTextP>Something went wrong.</NotFoundContentTextP>
+          <NotFoundContentTextSmall>
+            Looks like the page you are looking for is currentlyunavailable.
+          </NotFoundContentTextSmall>
+          <NotFoundContentLink href="/">Go back home</NotFoundContentLink>
+        </NotFoundContentText>
+    </NotFoundDivContainer>
   );
 }
