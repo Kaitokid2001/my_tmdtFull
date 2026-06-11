@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins} from "next/font/google";
 import {GlobalStyle} from "./styles/resetAllCss";
 import StyledComponentsRegistry from "./lib/registry";
+import Footer from "./components/footer";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
@@ -74,12 +75,13 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} antialiased`}
     >
-      <body>
-        <StyledComponentsRegistry>
-          <GlobalStyle /> 
+      <StyledComponentsRegistry>
+        <GlobalStyle /> 
+          <body>
             {children}
-        </StyledComponentsRegistry>
-      </body>
+            <Footer />
+          </body>
+      </StyledComponentsRegistry>
     </html>
   );
 }

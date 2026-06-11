@@ -1,6 +1,5 @@
 'use client'
 import { createGlobalStyle } from "styled-components";
-import styled from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -41,8 +40,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-size: 1.4rem;
-    font-family: "Poppins", sans-serif;
     line-height: 1;
+    font-family: "Poppins", sans-serif;
   }
 
   ol, ul {
