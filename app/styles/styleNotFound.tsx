@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from 'next/link';
+
 import { media } from './breakpoints';
 
 export const NotFoundDivContainer = styled.div`
@@ -7,7 +8,7 @@ export const NotFoundDivContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    @media (${media.lg}) {
+    @media (${media.xl}) {
         flex-direction: column;
     }
 `;

@@ -4,6 +4,11 @@ import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material";
 import { 
   FooterContainer, 
   FooterContent,
+  FooterContentRow,
+  FooterContentRowTitle,
+  FooterContentRowUlItem,
+  FooterContentRowLiItem,
+  FooterContentRowItem,
   FooterDivShareIcon,
   FooterShareIcon,
   FooterIconLink,
@@ -21,7 +26,40 @@ export default function Footer() {
 
   return (
     <FooterContainer>
-      <FooterContent></FooterContent>
+      <FooterContent>
+        <FooterContentRow>
+          <FooterContentRowTitle>Company</FooterContentRowTitle>
+          <FooterContentRowUlItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/about">About Us</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/services">Our Services</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/privacy">Privacy Policy</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/affiliate">Affiliate Program</FooterContentRowItem></FooterContentRowLiItem>
+          </FooterContentRowUlItem>
+        </FooterContentRow>
+        <FooterContentRow>
+          <FooterContentRowTitle>Get Help</FooterContentRowTitle>
+          <FooterContentRowUlItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/faq">FAQ</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/shipping">Shipping</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/returns">Returns</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/order-status">Order Status</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/payment-options">Payment Options</FooterContentRowItem></FooterContentRowLiItem>
+          </FooterContentRowUlItem>
+        </FooterContentRow>
+        <FooterContentRow>
+          <FooterContentRowTitle>Online Shop</FooterContentRowTitle>
+          <FooterContentRowUlItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/watch">Watch</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/bag">Bag</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/shoes">Shoes</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/dress">Dress</FooterContentRowItem></FooterContentRowLiItem>
+          </FooterContentRowUlItem>
+        </FooterContentRow>
+        <FooterContentRow>
+          <FooterContentRowTitle>Location Shop</FooterContentRowTitle>
+          
+        </FooterContentRow>
+      </FooterContent>
       <FooterDivShareIcon>
         <FooterShareIcon>
           {socialLinks.map((item, index) => (

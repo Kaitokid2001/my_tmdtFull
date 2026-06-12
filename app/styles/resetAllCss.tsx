@@ -42,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
     line-height: 1;
     font-family: "Poppins", sans-serif;
+    height: 100vh;
   }
 
   ol, ul {
