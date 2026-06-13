@@ -43,6 +43,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1;
     font-family: "Poppins", sans-serif;
     height: 100vh;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
   }
 
   ol, ul {

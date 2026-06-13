@@ -15,6 +15,11 @@ import {
   FooterCopyright,
  } from "../styles/styleFooter";
 
+ interface Coordinate {
+  lat: number;
+  lng: number;
+}
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const socialLinks = [
@@ -23,6 +28,10 @@ export default function Footer() {
     { icon: Twitter, url: "https://www.twitter.com/" },
     { icon: LinkedIn, url: "https://www.linkedin.com/in/ki%E1%BB%87t-hu%E1%BB%B3nh-240123398/" },
   ];
+  const hcmcLocation: Coordinate = {
+    lat: 10.827944,
+    lng: 10.756667,
+  };
 
   return (
     <FooterContainer>
@@ -57,7 +66,7 @@ export default function Footer() {
         </FooterContentRow>
         <FooterContentRow>
           <FooterContentRowTitle>Location Shop</FooterContentRowTitle>
-          
+
         </FooterContentRow>
       </FooterContent>
       <FooterDivShareIcon>

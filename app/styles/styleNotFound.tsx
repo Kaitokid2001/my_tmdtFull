@@ -25,17 +25,17 @@ export const NotFoundContentText = styled.div`
 `;
 
 export const NotFoundContentTextH1 = styled.h1`
-    font-size: 60px;
+    font-size: 6em;
 `;
 
 export const NotFoundContentTextP = styled.p`
-    font-size: 30px;
+    font-size: 3em;
     font-weight: bold;
     color: red;
 `;
 
 export const NotFoundContentTextSmall = styled.small`
-    font-size: 16px;
+    font-size: 1.6em;
     color: #444;
 `;
 
@@ -52,7 +52,7 @@ export const NotFoundContentLink = styled(Link)`
     color: var(--button-text);
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1.6em;
     font-weight: 600;
     border: none;
     border-radius: 8px;
