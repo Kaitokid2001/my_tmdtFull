@@ -19,21 +19,19 @@ export const FooterContent = styled.div`
     gap: 250px;
     margin: 20px 0;
 
-    @media (${media.xl}) {
+    @media (${media.lg}) {
         flex-direction: column;
         gap: 40px;
         margin: 0;
+        align-items: center;
+        justify-content: center;
     }
 `;
 
 export const FooterContentRow = styled.div`
     display: inline-flex;
     flex-direction: column;
-    padding: 30px;
-
-    // & > *:last-child{
-    //     width: 500px;
-    // }
+    width: 250px;
 `;
 
 export const FooterContentRowTitle = styled.h1`

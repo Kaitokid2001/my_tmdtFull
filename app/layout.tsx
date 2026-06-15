@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins} from "next/font/google";
-import {GlobalStyle} from "./styles/resetAllCss";
+import { Poppins } from "next/font/google";
+import { GlobalStyle } from "./styles/resetAllCss";
 import StyledComponentsRegistry from "./lib/registry";
 import Footer from "./components/footer";
 
