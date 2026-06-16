@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { GoogleMap, MarkerF, InfoWindow, useJsApiLoader } from '@react-google-maps/api'
+import {GoogleMapDiv} from "../styles/styleGoogleMap"
 
 const containerStyle = {
     width: '400px',
-    height: '300px',
+    height: '250px',
     borderRadius: 10,
 }
 
@@ -35,7 +36,7 @@ export default function GoogleMapSection() {
     }, [])
 
     return isLoaded ? (
-        <div>
+        <GoogleMapDiv>
             <GoogleMap
                 mapContainerStyle={containerStyle}
                 center={home}
@@ -56,8 +57,8 @@ export default function GoogleMapSection() {
                     </InfoWindow>
                 )}
             </GoogleMap>
-        </div>
+        </GoogleMapDiv>
     ) : (
-        <div>Loading...</div>
+        <GoogleMapDiv>Loading...</GoogleMapDiv>
     )
 }

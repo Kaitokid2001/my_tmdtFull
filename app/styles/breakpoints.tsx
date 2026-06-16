@@ -1,4 +1,4 @@
-// breakpoints.ts
+
 export const breakpoints = {
   sm: '640px',   // Mobile nhỏ
   md: '768px',   // Mobile lớn/Tablet
