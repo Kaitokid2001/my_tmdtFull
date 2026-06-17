@@ -4,7 +4,7 @@ import {GoogleMapDiv} from "../styles/styleGoogleMap"
 
 const containerStyle = {
     width: '400px',
-    height: '250px',
+    height: '200px',
     borderRadius: 10,
 }
 

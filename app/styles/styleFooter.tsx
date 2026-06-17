@@ -8,7 +8,7 @@ export const FooterContainer = styled.footer`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-color: #dbdfe1;
     margin: 100px 0px;
 `;
 
@@ -36,8 +36,8 @@ export const FooterContentRow = styled.div`
 `;
 
 export const FooterContentRowTitle = styled.h1`
-    font-size: 2.4em;
-    color: #ffffff;
+    font-size: 1.8rem;
+    color: #E87722;
     text-transform: capitalize;
     margin-bottom: 20px;
     font-weight: 500;
@@ -57,13 +57,12 @@ export const FooterContentRowTitle = styled.h1`
 
 export const FooterContentRowUlItem = styled.ul`
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding-top: 10px;
 `;
 
 
 export const FooterContentRowLiItem = styled.li`
-    font-size: 1.6em;
+    font-size: 1.25rem;
 
     &:not(:last-child){
         margin-bottom: 20px;
@@ -75,7 +74,7 @@ export const FooterContentRowItem = styled(Link)`
     color: inherit;
 
     &:hover{
-        color: #ffffff;
+        color: #E87722;
     }
 `;
 
@@ -85,6 +84,7 @@ export const FooterDivShareIcon = styled.div`
     width: 100%;
     border-top: 1.5px solid #000;
     gap: 10px;
+    padding: 10px 0;
 `;
 
 export const FooterIconLink = styled(Link)`
@@ -102,7 +102,7 @@ export const FooterShareIcon = styled.div`
         margin: 0 20px;
         svg,
         icon {
-            color: #fff;
+            color: #E87722;
             font-size: 3em;
         };
     }
@@ -111,5 +111,5 @@ export const FooterShareIcon = styled.div`
 export const FooterCopyright = styled.p`
     text-align: center;
     font-size: 1em;
-    color: #fff;
+    color: #E87722;
 `;

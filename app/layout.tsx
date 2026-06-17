@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { GlobalStyle } from "./styles/resetAllCss";
 import StyledComponentsRegistry from "./lib/registry";
+import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -78,6 +79,7 @@ export default function RootLayout({
       <StyledComponentsRegistry>
         <GlobalStyle /> 
           <body>
+            <Navbar/>
             {children}
             <Footer />
           </body>

@@ -13,10 +13,6 @@ export const NotFoundDivContainer = styled.div`
     }
 `;
 
-export const NotFoundDivImg = styled.div`
-    
-`;
-
 export const NotFoundContentText = styled.div`
     margin: 0 40px;
     display: flex;

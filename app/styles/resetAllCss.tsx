@@ -39,8 +39,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-size: 1.4rem;
-    line-height: 1;
     font-family: "Poppins", sans-serif;
     height: 100vh;
     user-select: none !important;
