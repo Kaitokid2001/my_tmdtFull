@@ -8,33 +8,71 @@ export const NavbarContainer = styled.nav`
     position: absolute;
 `;
 
-export const InputOpen = styled.input.attrs({ type: 'checkbox' })`
-    width: 100%;
-    height: 5px;
-    padding 0;
-    margin: 0;
-    appearance: none;
-    background-color: #333;
-    border-radius: 9999px;
-    outline: none;
-    pointer-event: none;
-    transition: opacity 200ms ease-in-out, width 200ms ease-in-out,
-        rotate 200ms ease-in-out, translate 200ms ease-in-out,
-        background-color 200ms ease-in-out;
-        
-    &:checked{
-        opacity: 0;
-        width: 0;
-        transform-origin: left center; 
-    }
-`
-
 export const NavbarMenuHidden = styled.div`
-    padding: 32px 46px;
+    position: relative;
+    display: inline-block;
+    width: 150px;
+`;
+
+export const Checkbox = styled.input`
+    display: none;
+`;
+
+export const MenuChecked = styled.label<{ $checked: boolean }>`
+    position: absolute;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    transform: ${(props) =>
+    props.$checked
+        ? 'translate(-50%, -50%) rotateY(180deg)'
+        : 'translate(-50%, -50%)'};
+    transform-origin: center center;
+    cursor: pointer;
+    transition: 0.5s;
+    background: none;
+    border: none;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-`
+
+    &:hover .bar {
+        box-shadow: 0 0 25px 0 rgba(255, 255, 255, 0.5);
+    }
+`;
+
+export const BarAnimated = styled.div<{ $checked: boolean }>`
+    background: #fff;
+  width: 30px;
+  height: 5px;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  transition: 0.4s;
+
+  &:not(:first-child) {
+    margin-top: 5px;
+  }
+
+  ${(props) =>
+    props.$checked &&
+    `
+    &:nth-child(1) {
+      margin-top: 10px;
+      transform: rotate(-45deg);
+      transform-origin: center;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      margin-top: -15px;
+      transform: rotate(45deg);
+      transform-origin: center;
+    }
+  `}
+`;
 
 export const NavbarContent = styled.div`
     background-color: #ffffff;

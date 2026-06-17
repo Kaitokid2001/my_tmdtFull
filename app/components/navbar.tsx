@@ -3,7 +3,9 @@
 import React, { useState } from 'react';
 import {
     NavbarContainer,
-    InputOpen,
+    Checkbox,
+    BarAnimated,
+    MenuChecked,
     NavbarMenuHidden,
     NavbarContent,
     NavbarContentMenu,
@@ -14,15 +16,22 @@ import {
 import { Search } from "@mui/icons-material";
 
 export default function Navbar (){
-    const [openMenu, setOpenMenu] = useState(false);
+    const [checked, setChecked] = useState(false);
 
     return(
         <NavbarContainer>
             <NavbarMenuHidden>
-                <InputOpen 
-                            checked={openMenu}
-                            // onChange={activeOpenMenu}
-                        />
+                <Checkbox
+                    type="checkbox"
+                    id="check"
+                    checked={checked}
+                    onChange={(e) => setChecked(e.target.checked)}
+                />
+                <MenuChecked $checked={checked} htmlFor="check">
+                    <BarAnimated $checked={checked} className="bar" />
+                    <BarAnimated $checked={checked} className="bar" />
+                    <BarAnimated $checked={checked} className="bar" />
+                </MenuChecked>
             </NavbarMenuHidden>
             <NavbarContent>
                 <NavbarContentMenu>                
