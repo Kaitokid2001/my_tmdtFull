@@ -9,7 +9,6 @@ export const FooterContainer = styled.footer`
     align-items: center;
     justify-content: center;
     background-color: #dbdfe1;
-    margin: 100px 0px;
 `;
 
 export const FooterContent = styled.div`
@@ -62,7 +61,7 @@ export const FooterContentRowUlItem = styled.ul`
 
 
 export const FooterContentRowLiItem = styled.li`
-    font-size: 1.25rem;
+    font-size: 1.4rem;
 
     &:not(:last-child){
         margin-bottom: 20px;

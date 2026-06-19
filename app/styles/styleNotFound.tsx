@@ -7,9 +7,12 @@ export const NotFoundDivContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100vh;
 
     @media (${media.xl}) {
         flex-direction: column;
+        padding: 100px 0 50px 0;
     }
 `;
 

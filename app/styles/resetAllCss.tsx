@@ -40,11 +40,14 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: "Poppins", sans-serif;
-    height: 100vh;
     user-select: none !important;
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   ol, ul {
