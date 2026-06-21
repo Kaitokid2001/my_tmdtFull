@@ -12,6 +12,7 @@ export const NotFoundDivContainer = styled.div`
 
     @media (${media.xl}) {
         flex-direction: column;
+        margin-top: 100px;
         padding: 100px 0 50px 0;
     }
 `;

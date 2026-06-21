@@ -15,6 +15,8 @@ export const NavbarMenuHidden = styled.div`
     position: relative;
     display: inline-block;
     width: 100px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 4px;
 `;
 
 //CSS Hamberger button
@@ -51,7 +53,7 @@ export const MenuChecked = styled.label<{ $checked: boolean }>`
 `;
 
 export const BarAnimated = styled.div<{ $checked: boolean }>`
-    background: #000;
+    background: #fff;
     width: 30px;
     height: 5px;
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
@@ -69,6 +71,7 @@ export const BarAnimated = styled.div<{ $checked: boolean }>`
         margin-top: 10px;
         transform: rotate(-45deg);
         transform-origin: center;
+        background: #E87722;
         }
 
         &:nth-child(2) {
@@ -79,6 +82,7 @@ export const BarAnimated = styled.div<{ $checked: boolean }>`
         margin-top: -15px;
         transform: rotate(45deg);
         transform-origin: center;
+        background: #E87722;
         }
     `}
 `;
@@ -97,10 +101,12 @@ export const SidebarMenu = styled.div<{ $open: boolean }>`
     };
     transition: transform 0.3s ease-in-out;
     z-index: 999;
-    padding: 120px 20px;
+    padding: 120px 0 0 0;
     overflow-y: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
 `;
 
 export const SidebarMenuUl = styled.ul`
@@ -110,9 +116,16 @@ export const SidebarMenuUl = styled.ul`
 
 export const SidebarMenuLi = styled.li`
     font-size: 2.8rem;
+`;
+
+export const SidebarMenuDivItem = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 32px;
 
     p {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         font-weight: 600;
         text-decoration: none;
         color: #000;
@@ -124,15 +137,7 @@ export const SidebarMenuLi = styled.li`
     }
 `;
 
-export const SidebarMenuDivItem = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 150px;
-`;
-
 //Sidebar plus
-
 export const ToggleButton = styled.button`
     display: inline-flex;
     align-items: center;
@@ -184,16 +189,17 @@ export const PlusMinusIcon = styled.span<{ open: boolean }>`
         props.open
         ? `
             &::after {
-            opacity: 0;
-            transform: rotate(90deg) scale(0);
+                opacity: 0;
+                transform: rotate(90deg) scale(0);
             }
         `
         : `
             &::before {
-            transform: rotate(0deg);
+                transform: rotate(0deg);
             }
+
             &::after {
-            transform: rotate(0deg);
+                transform: rotate(0deg);
             }
         `}
 `;
@@ -206,6 +212,7 @@ export const ContentDiv = styled.div<{ hidden: boolean }>`
     padding: 8px 10px;
     background: #fff;
     animation: fadeIn 0.25s ease;
+    padding: 0 32px;
 
     @keyframes fadeIn {
         from {
@@ -219,19 +226,21 @@ export const ContentDiv = styled.div<{ hidden: boolean }>`
     }
 `;
 
-export const ItemList = styled.ul`
-    list-style: none;
-    padding: 0;
-    margin: 0;
+export const ItemList = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
-export const Item = styled.li`
+export const Item = styled(Link)`
     position: relative;
     padding-left: 28px;
     padding-top: 4px;
     padding-bottom: 4px;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.8rem;
     cursor: pointer;
-    list-style: none;
 
     &::before,
     &::after {
@@ -261,6 +270,17 @@ export const Item = styled.li`
 
     &:hover {
         color: #E87722;
+    }
+`;
+
+export const FooterMenuSidebar = styled.div`
+    border-top: 1.5px solid #000;
+    padding: 10px 0;
+    
+    p{  
+        font-size: 1.1rem;
+        font-weight: 300;
+        padding: 0 30px;
     }
 `;
 
@@ -356,25 +376,126 @@ export const SidebarSearch = styled.div<{ $open: boolean }>`
     top: 0;
     right: 0;            
     width: 100%;
-    height: 33.33vh;   
+    height: 30vh;
     background: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    border-radius: 8px;
+    border-radius: 60px;
     z-index: 1003;
-    margin-top:200px;
 
     opacity: ${(p) => (p.$open ? 1 : 0)};
     pointer-events: ${(p) => (p.$open ? 'auto' : 'none')};
     transform: ${(p) => (p.$open ? 'translateY(0)' : 'translateY(-8px)')};
     transition: opacity 0.2s ease, transform 0.2s ease;
 
-    padding: 12px;
+    padding: 20px 150px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 8px;
 
     @media (${media.xl}) {
         height: 100vh;
+        padding: 20px 60px;
+    }
+`;
+
+export const SidebarSearchDiv = styled.div`
+    width: 100%;
+
+    h3{
+        font-size: 3.2rem;
+        font-weight: 300;
+        color: #E87722;
+    }
+
+    p{
+        margin-top: 20px;
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: #E87722;
+    }
+`;
+
+export const SearchFormDiv =  styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border: 1px solid #000;
+    border-radius: 28px;
+    box-sizing: border-box;
+    background: #f6f6f6;
+    transition: box-shadow 0.2s, transform 0.15s;
+    margin-top: 20px;
+
+    &:focus-within{
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    
+    svg{
+        width: 28px;
+        height: 28px;
+        color: #666;
+        flex: 0 0 auto;
+    }
+
+    input{
+        font-size: 1.6rem;
+        color: #333;
+        margin: 0;
+        outline: none;
+        border: none;
+        background: transparent;
+        flex: 1 1 auto;
+        min-width: 0;
+
+        &::placeholder{
+            color: rgba(0, 0, 0, 0.35);
+        }
+    }
+`;
+
+export const SidebarSearchDivDelete = styled.button`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+
+    // Tạo dấu X bằng 2 thanh xoay
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        background: #E87722;
+        transition: all 0.3s ease;
+    }
+
+    // Thanh 1 (xoay 45 độ)
+    &::before {
+        width: 30px;
+        height: 2px;
+        transform: rotate(45deg);
+    }
+
+    // Thanh 2 (xoay -45 độ)
+    &::after {
+        width: 30px;
+        height: 2px;
+        transform: rotate(-45deg);
+    }
+
+    &:hover {
+        &::before,
+        &::after {
+            background: #000;
+        }
     }
 `;

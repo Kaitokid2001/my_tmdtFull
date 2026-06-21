@@ -16,6 +16,7 @@ import {
     ContentDiv,
     ItemList,
     Item,
+    FooterMenuSidebar,
     NavbarContent,
     NavbarContentMenu,
     NavbarContentText,
@@ -23,11 +24,15 @@ import {
     NavbarMenuSearch,
     MenuCheckedSearch,
     SidebarSearch,
+    SidebarSearchDiv,
+    SearchFormDiv,
+    SidebarSearchDivDelete,
 } from '../styles/styleNavbar'
 
 import { Search } from "@mui/icons-material";
 
 export default function Navbar (){
+    const currentYear = new Date().getFullYear();
     const [checked, setChecked] = useState(false);
     const [openMenuItem1, setOpenMenuItem1] = useState(false);
     const [openMenuItem2, setOpenMenuItem2] = useState(false);
@@ -65,65 +70,66 @@ export default function Navbar (){
                     <SidebarMenuUl>
                         <SidebarMenuLi>
                             <SidebarMenuDivItem onClick={() => setOpenMenuItem1((v) => !v)}>
-                                <p>sdahidocgsaydgsahudgsahudujdhsaiuyd</p>
+                                <p>Concast</p>
                                 <ToggleButton >
                                     <PlusMinusIcon open={openMenuItem1} />
                                 </ToggleButton>
                             </SidebarMenuDivItem>
                             <ContentDiv hidden={!openMenuItem1}>
                                 <ItemList>
-                                    <Item>Mục 1</Item>
-                                    <Item>Mục 2</Item>
-                                    <Item>Mục 3</Item>
+                                    <Item href="/product">Mục 1</Item>
+                                    <Item href="/product">Mục 2</Item>
+                                    <Item href="/product">Mục 3</Item>
                                 </ItemList>
                             </ContentDiv>
                         </SidebarMenuLi>
                         <SidebarMenuLi>
                             <SidebarMenuDivItem onClick={() => setOpenMenuItem2((v) => !v)}>
-                                <p>sdahidocgsaydgsahudgsahudujdhsaiuyd</p>
+                                <p>Concast</p>
                                 <ToggleButton >
                                     <PlusMinusIcon open={openMenuItem2} />
                                 </ToggleButton>
                             </SidebarMenuDivItem>
                             <ContentDiv hidden={!openMenuItem2}>
                                 <ItemList>
-                                    <Item>Mục 1</Item>
-                                    <Item>Mục 2</Item>
-                                    <Item>Mục 3</Item>
+                                    <Item href="/product">Mục 1</Item>
+                                    <Item href="/product">Mục 2</Item>
+                                    <Item href="/product">Mục 3</Item>
                                 </ItemList>
                             </ContentDiv>
                         </SidebarMenuLi>
                         <SidebarMenuLi>
                             <SidebarMenuDivItem onClick={() => setOpenMenuItem3((v) => !v)}>
-                                <p>sdahidocgsaydgsahudgsahudujdhsaiuyd</p>
+                                <p>Concast</p>
                                 <ToggleButton >
                                     <PlusMinusIcon open={openMenuItem3} />
                                 </ToggleButton>
                             </SidebarMenuDivItem>
                             <ContentDiv hidden={!openMenuItem3}>
                                 <ItemList>
-                                    <Item>Mục 1</Item>
-                                    <Item>Mục 2</Item>
-                                    <Item>Mục 3</Item>
+                                    <Item href="/product">Mục 1</Item>
+                                    <Item href="/product">Mục 2</Item>
+                                    <Item href="/product">Mục 3</Item>
                                 </ItemList>
                             </ContentDiv>
                         </SidebarMenuLi>
                         <SidebarMenuLi>
                             <SidebarMenuDivItem onClick={() => setOpenMenuItem4((v) => !v)}>
-                                <p>sdahidocgsaydgsahudgsahudujdhsaiuyd</p>
+                                <p>Concast</p>
                                 <ToggleButton >
                                     <PlusMinusIcon open={openMenuItem4} />
                                 </ToggleButton>
                             </SidebarMenuDivItem>
                             <ContentDiv hidden={!openMenuItem4}>
                                 <ItemList>
-                                    <Item>Mục 1</Item>
-                                    <Item>Mục 2</Item>
-                                    <Item>Mục 3</Item>
+                                    <Item href="/product">Mục 1</Item>
+                                    <Item href="/product">Mục 2</Item>
+                                    <Item href="/product">Mục 3</Item>
                                 </ItemList>
                             </ContentDiv>
                         </SidebarMenuLi>
                     </SidebarMenuUl>
+                    <FooterMenuSidebar><p>Version &copy; {currentYear} recommend</p></FooterMenuSidebar>
                 </SidebarMenu>
             </NavbarMenuHidden>
             <NavbarContent>
@@ -153,9 +159,20 @@ export default function Navbar (){
 
                     {/* Div dropdown open */}
                     <SidebarSearch $open={openSearch}>
-                        <h3>Search</h3>
-                        <input type="text" placeholder="Search..." />
-                        <p>Content ở đây...</p>
+                        <SidebarSearchDiv>
+                            <h3>Search item you want.</h3>
+                            <form>
+                                <SearchFormDiv>
+                                    <Search/>
+                                    <input type="text" placeholder="Search..." />
+                                </SearchFormDiv>
+                            </form>
+                            <p>Item ......</p>
+                        </SidebarSearchDiv>
+                        <SidebarSearchDivDelete
+                            onClick={() => setOpenSearch(false)}
+                            title="Đóng tìm kiếm"
+                        />
                     </SidebarSearch>
                 </NavbarContentMenu>
             </NavbarContent>
