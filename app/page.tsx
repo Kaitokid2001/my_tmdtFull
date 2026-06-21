@@ -1,6 +1,6 @@
 
 
-import {PageDiv} from "./styles/stylePage";
+import {PageDiv} from "../styles/stylePage";
 
 export default function Home() {
   return (
