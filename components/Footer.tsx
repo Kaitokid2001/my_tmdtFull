@@ -1,5 +1,9 @@
 'use client'
 
+
+import GoogleMapSection from "./GoogleMapSection";
+import { useTranslations } from "next-intl";
+
 import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material";
 import { 
   FooterContainer, 
@@ -14,10 +18,9 @@ import {
   FooterIconLink,
   FooterCopyright,
  } from "../styles/styleFooter";
-import GoogleMapSection from "./GoogleMapSection"
-
 
 export default function Footer() {
+  const t = useTranslations("footer");
   const currentYear = new Date().getFullYear();
   const socialLinks = [
     { icon: Facebook, url: "https://www.facebook.com/kiethuynh0904/" },
@@ -30,35 +33,35 @@ export default function Footer() {
     <FooterContainer>
       <FooterContent>
         <FooterContentRow>
-          <FooterContentRowTitle>Company</FooterContentRowTitle>
+          <FooterContentRowTitle>{t('company.header')}</FooterContentRowTitle>
           <FooterContentRowUlItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/about">About Us</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/services">Our Services</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/privacy">Privacy Policy</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/affiliate">Affiliate Program</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/about">{t('company.aboutUs')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/services">{t('company.ourServices')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/privacy">{t('company.privacyPolicy')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/affiliate">{t('company.affiliateProgram')}</FooterContentRowItem></FooterContentRowLiItem>
           </FooterContentRowUlItem>
         </FooterContentRow>
         <FooterContentRow>
-          <FooterContentRowTitle>Get Help</FooterContentRowTitle>
+          <FooterContentRowTitle>{t('getHelp.header')}</FooterContentRowTitle>
           <FooterContentRowUlItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/faq">FAQ</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/shipping">Shipping</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/returns">Returns</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/order-status">Order Status</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/payment-options">Payment Options</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/faq">{t('getHelp.fAQ')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/shipping">{t('getHelp.shipping')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/returns">{t('getHelp.returns')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/order-status">{t('getHelp.orderStatus')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/payment-options">{t('getHelp.paymentOptions')}</FooterContentRowItem></FooterContentRowLiItem>
           </FooterContentRowUlItem>
         </FooterContentRow>
         <FooterContentRow>
-          <FooterContentRowTitle>Online Shop</FooterContentRowTitle>
+          <FooterContentRowTitle>{t('onlineShop.header')}</FooterContentRowTitle>
           <FooterContentRowUlItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/watch">Watch</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/bag">Bag</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/shoes">Shoes</FooterContentRowItem></FooterContentRowLiItem>
-            <FooterContentRowLiItem><FooterContentRowItem href="/dress">Dress</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/watch">{t('onlineShop.watch')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/bag">{t('onlineShop.bag')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/shoes">{t('onlineShop.shoes')}</FooterContentRowItem></FooterContentRowLiItem>
+            <FooterContentRowLiItem><FooterContentRowItem href="/dress">{t('onlineShop.dress')}</FooterContentRowItem></FooterContentRowLiItem>
           </FooterContentRowUlItem>
         </FooterContentRow>
         <FooterContentRow>
-          <FooterContentRowTitle>Location</FooterContentRowTitle>
+          <FooterContentRowTitle>{t('location.header')}</FooterContentRowTitle>
           <GoogleMapSection/>
         </FooterContentRow>
       </FooterContent>
@@ -76,7 +79,7 @@ export default function Footer() {
           ))}
         </FooterShareIcon>
         <FooterCopyright>
-          Copyright &copy; {currentYear} All rights reserved.
+          {t('location.topTitle')} &copy; {currentYear} {t('location.endTitle')}
         </FooterCopyright>
       </FooterDivShareIcon>
     </FooterContainer>

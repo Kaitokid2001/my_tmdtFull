@@ -1,0 +1,50 @@
+{
+    "navbar": {
+        "menu": {
+
+        },
+
+        "author":{
+            "login": "login",
+            "register": "register"
+        }
+    },
+
+    "footer": {
+        "company": {
+            "header" : "Company",
+            "aboutUs": "About Us",
+            "ourServices": "Our Services",
+            "privacyPolicy": "Privacy Policy",
+            "affiliateProgram": "Affiliate Program"
+        },
+
+        "getHelp": {
+            "header": "Get Help",
+            "fAQ": "FAQ",
+            "shipping": "Shipping",
+            "returns": "Returns",
+            "orderStatus": "Order Status",
+            "paymentOptions": "Payment Options"
+        },
+
+        "onlineShop": {
+            "header": "Online Shop",
+            "watch": "Watch",
+            "bag": "Bag",
+            "shoes": "Shoes",
+            "dress": "Dress"
+        },
+
+        "location": {
+            "header": "Location",
+            "topTitle": "Copyright",
+            "endTitle": "All rights reserved."
+        }
+    },
+
+    "homepage": {
+        "header": "hello"
+    }
+}
+    

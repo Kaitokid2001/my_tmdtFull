@@ -1,0 +1,49 @@
+{
+    "navbar": {
+        "menu": {
+
+        },
+
+        "author":{
+            "login": "đăng nhập",
+            "register": "đăng ký"
+        }
+    },
+
+    "footer": {
+        "company": {
+            "header" : "Công ty",
+            "aboutUs": "Về chúng tôi",
+            "ourServices": "Dịch vụ của chúng tôi",
+            "privacyPolicy": "Chính sách bảo mật",
+            "affiliateProgram": "Chương trình liên kết"
+        },
+
+        "getHelp": {
+            "header": "Nhận trợ giúp",
+            "fAQ": "FAQ",
+            "shipping": "Vận chuyển",
+            "returns": "Hoàn trả",
+            "orderStatus": "Trạng thái đơn hàng",
+            "paymentOptions": "Cài đặt thanh toán"
+        },
+
+        "onlineShop": {
+            "header": "Cửa hàng trực tuyến",
+            "watch": "Đồng hồ",
+            "bag": "Túi",
+            "shoes": "Giày",
+            "dress": "Váy"
+        },
+
+        "location": {
+            "header": "Địa chỉ hiện tại",
+            "topTitle": "Bản quyền",
+            "endTitle": "Mọi quyền được bảo lưu."
+        }
+    },
+
+    "homepage": {
+        "header": "Xin chào"
+    }
+}

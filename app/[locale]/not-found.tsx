@@ -8,7 +8,7 @@ import {
     NotFoundContentTextP,
     NotFoundContentTextSmall,
     NotFoundContentLink
- } from "../styles/styleNotFound";
+ } from "../../styles/styleNotFound";
 
 
 export default function NotFound() {

@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
 import { Poppins } from "next/font/google";
-import { GlobalStyle } from "../styles/resetAllCss";
-import StyledComponentsRegistry from "../lib/registry";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { GlobalStyle } from "../../styles/resetAllCss";
+import StyledComponentsRegistry from "../../lib/registry";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import { routing } from "@/i18n/routing";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
@@ -66,24 +69,36 @@ export const viewport = {
   maximumScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{locale: string}>;
 }>) {
+  const {locale} = await params;
+
+  if(!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  const messages = (await import(`@/messages/${locale}.json`)).default;
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${poppins.variable} antialiased`}
     >
-      <StyledComponentsRegistry>
-        <GlobalStyle /> 
-          <body>
-            <Navbar/>
-            {children}
-            <Footer />
-          </body>
-      </StyledComponentsRegistry>
+      <NextIntlClientProvider locale={locale} messages={messages}>
+        <StyledComponentsRegistry>
+          <GlobalStyle /> 
+            <body>
+              <Navbar/>
+              {children}
+              <Footer />
+            </body>
+        </StyledComponentsRegistry>
+      </NextIntlClientProvider>
     </html>
   );
 }

@@ -326,18 +326,39 @@ export const NavbarContentText = styled(Link)`
 `;
 
 export const NavbarButton = styled.button`
-    padding: 6px 16px !important;
+    padding: 10px 20px !important;
     font-size: 1.6rem;
     font-weight: 300;
-    border: none;
-    border-radius: 8px;
+    border: 1px solid #E87722;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s;
-    background-color: #0070f3;
+    background-color: #E87722;
     color: white;
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
     
-    &:hover {
-        background-color: #005bb5;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: #fff;
+        transition: 0.5s;
+        z-index: -1;
+    }
+    
+    &:hover::before {
+        width: 100%;
+    }
+
+    &:hover{
+        color: #E87722;
+        box-shadow: 12px 12px 50px rgba(0,0,0,0.5);
     }
         
     &:active {

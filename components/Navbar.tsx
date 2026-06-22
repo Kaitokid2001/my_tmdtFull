@@ -1,6 +1,10 @@
 'use client'
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { Search } from '@mui/icons-material';
+import LocaleSwitcher from './LocaleSwitcher';
+import { Link, usePathname} from "@/i18n/navigation";
 import {
     NavbarContainer,
     Checkbox,
@@ -29,9 +33,13 @@ import {
     SidebarSearchDivDelete,
 } from '../styles/styleNavbar'
 
-import { Search } from "@mui/icons-material";
-
 export default function Navbar (){
+    // path link
+    const pathname = usePathname();
+    const isActive = (href: string) => {
+        return pathname === href;
+    }
+    const t = useTranslations("navbar");
     const currentYear = new Date().getFullYear();
     const [checked, setChecked] = useState(false);
     const [openMenuItem1, setOpenMenuItem1] = useState(false);
@@ -142,8 +150,8 @@ export default function Navbar (){
                     <NavbarContentText href="/product">product</NavbarContentText>
                 </NavbarContentMenu>
                 <NavbarContentMenu>
-                    <NavbarButton>Login</NavbarButton>
-                    <NavbarButton>Register</NavbarButton> 
+                    <NavbarButton>{t('author.login')}</NavbarButton>
+                    <NavbarButton>{t('author.register')}</NavbarButton> 
                     <NavbarMenuSearch>
                         <Checkbox
                         type="checkbox"
@@ -174,6 +182,7 @@ export default function Navbar (){
                             title="Đóng tìm kiếm"
                         />
                     </SidebarSearch>
+                    <LocaleSwitcher/>
                 </NavbarContentMenu>
             </NavbarContent>
         </NavbarContainer>

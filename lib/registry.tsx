@@ -20,6 +20,10 @@ export default function StyledComponentsRegistry({
     return <>{styles}</>;
   });
 
+  if (typeof window !== "undefined") {
+    return <>{children}</>;
+  }
+
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
       {children}
