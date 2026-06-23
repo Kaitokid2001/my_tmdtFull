@@ -369,6 +369,17 @@ export const NavbarButton = styled.button`
 export const NavbarMenuSearch = styled.div`
     position: relative;
     display: inline-block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 100px;
+        background: #E87722;
+    }
 `; 
 
 export const MenuCheckedSearch = styled.label<{ $checked: boolean }>`

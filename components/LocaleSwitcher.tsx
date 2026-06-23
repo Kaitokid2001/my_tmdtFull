@@ -2,6 +2,10 @@
 
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import {
+    Select,
+    Option,
+} from "../styles/styleLocaleSwitcher"
 
 export default function LocaleSwitcher(){
     const locale = useLocale();
@@ -16,9 +20,9 @@ export default function LocaleSwitcher(){
     }
 
     return(
-        <select value={locale} onChange={e => SwitchLocate(e.target.value)}>
-            <option value="en">EN</option>
-            <option value="vn">VN</option>
-        </select>
+        <Select value={locale} onChange={e => SwitchLocate(e.target.value)}>
+            <Option value="vn">VN</Option>
+            <Option value="en">EN</Option>
+        </Select>
     )
 }

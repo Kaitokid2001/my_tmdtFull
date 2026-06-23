@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { GoogleMap, MarkerF, InfoWindow, useJsApiLoader } from '@react-google-maps/api'
-import {GoogleMapDiv} from "../styles/styleGoogleMap"
+import React, { useState } from "react";
+import { GoogleMap, MarkerF, InfoWindow, useJsApiLoader } from "@react-google-maps/api";
+import {GoogleMapDiv} from "../styles/styleGoogleMap";
 
 const containerStyle = {
     width: '400px',

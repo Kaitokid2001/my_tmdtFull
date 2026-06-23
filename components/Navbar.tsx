@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { Search } from '@mui/icons-material';
-import LocaleSwitcher from './LocaleSwitcher';
+import React, { useState } from "react";
+import { useTranslations } from "next-intl";
+import { Search } from "@mui/icons-material";
+import LocaleSwitcher from "./LocaleSwitcher";
 import { Link, usePathname} from "@/i18n/navigation";
 import {
     NavbarContainer,
