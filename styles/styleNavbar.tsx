@@ -5,10 +5,12 @@ import { media } from './breakpoints';
 
 export const NavbarContainer = styled.nav`
     display: flex;
-    flex-decoration: row;
+    flex-direction: row;
     width: 100%;
-    position: absolute;
-    height: 100vh - 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
 `;
 
 export const NavbarMenuHidden = styled.div`
@@ -101,7 +103,7 @@ export const SidebarMenu = styled.div<{ $open: boolean }>`
     };
     transition: transform 0.3s ease-in-out;
     z-index: 999;
-    padding: 120px 0 0 0;
+    padding: 120px 0 0;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -216,12 +218,12 @@ export const ContentDiv = styled.div<{ hidden: boolean }>`
 
     @keyframes fadeIn {
         from {
-        opacity: 0;
-        transform: translateY(-4px);
+            opacity: 0;
+            transform: translateY(-4px);
         }
         to {
-        opacity: 1;
-        transform: translateY(0);
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 `;
@@ -285,7 +287,7 @@ export const FooterMenuSidebar = styled.div`
 `;
 
 // Nav
-export const NavbarContent = styled.div`
+export const NavbarContent = styled.div<{ $hidden?: boolean }>`
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -295,6 +297,8 @@ export const NavbarContent = styled.div`
     padding-left: 32px;
     z-index: 1001;
     box-shadow: -0.5px 0.5px 1px #000;
+    transform: translateY(${(p) => (p.$hidden ? '-110%' : '0')});
+    transition: transform 220ms ease;
 `;
 
 export const NavbarContentMenu = styled.div`
@@ -305,19 +309,60 @@ export const NavbarContentMenu = styled.div`
     padding: 28px;
 `;
 
-export const NavbarContentText = styled(Link)`
-    font-size: 1.6rem;
+//sidebar menu full size
+export const SidebarMenuFull = styled.div<{ $visible?: boolean }>`
+    display: ${(p) => (p.$visible ? 'block' : 'none')};
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 1000;
+    min-width: 220px;
+    padding: 16px 20px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+    border: 1px solid #E87722;
+    opacity: ${(p) => (p.$visible ? 1 : 0)};
+    pointer-events: ${(p) => (p.$visible ? 'auto' : 'none')};
+    transform: translateY(${(p) => (p.$visible ? '0' : '-6px')});
+    transition: opacity 0.18s ease, transform 0.18s ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 35%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #E87722;
+        filter: drop-shadow(0 6px 12px rgba(0,0,0,0.06));
+        z-index: 1001;
+    }
+`;
+
+export const NavbarContentText = styled.div`
+    font-size: 1.8rem;
     font-weight: 600;
     text-decoration: none;
     color: #000;
     text-transform: capitalize;
+    position: relative;
 
     &:not(:first-child){
         margin-left: 36px;
     }
 
-    &: hover {
+    &:hover {
         color: #E87722;
+    }
+
+    &:hover ${SidebarMenuFull} {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
     }
 
     @media (${media.xl}) {
@@ -378,7 +423,7 @@ export const NavbarMenuSearch = styled.div`
         transform: translateY(-50%);
         width: 1px;
         height: 100px;
-        background: #E87722;
+        background: #000;
     }
 `; 
 

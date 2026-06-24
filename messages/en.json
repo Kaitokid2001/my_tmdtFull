@@ -1,12 +1,54 @@
 {
     "navbar": {
         "menu": {
+            "electronicComponents": {
+                "header": "Electronic Components",
+                "heatSink": "Heat sink",
+                "power": "Power"
+            },
 
+            "screen": "Screen",
+
+            "gamingGear": {
+                "mouseGaming": "Mouse Gaming",
+                "mouseOffice": "Mouse Office",
+                "keyboardGaming": "Keyboard Gaming",
+                "keyboardOffice": "Keyboard Office",
+                "wirelessHeadphones": "Wireless Headphones",
+                "wiredHeadphones": "Wired Headphones"
+            },
+
+            "tableChair": {
+                "header": "table & chair",
+                "chairGaming": "Chair Gaming",
+                "chairOffice": "Chair Office",
+                "chairErgonomic": "Ergonomic Chair",
+                "chairSwivel": "Swivel Chair",
+                "tableGaming": "Table Gaming",
+                "TableOffice": "Table Office",
+                "tableLifting": "Lifting Table",
+                "T-shapedDesk": "T-shaped desk"
+            },
+
+            "accessory": {
+                "header": "Accessory",
+                "accessoryLaptop": "Accessory Laptop",
+                "accessoryHeatSink": "Accessory Heat sink",
+                "accessoryGear": "Accessory Gear",
+                "accessoryScreen": "Accessory Screen",
+                "accessoryVGA&PSU": "Accessory VGA & PSU",
+                "armScreen": "ARM Screen"
+            }
         },
 
-        "author":{
+        "author": {
             "login": "login",
             "register": "register"
+        },
+
+        "search": {
+            "header": "Search item you want.",
+            "title": "Item ......"
         }
     },
 
@@ -41,6 +83,13 @@
             "topTitle": "Copyright",
             "endTitle": "All rights reserved."
         }
+    },
+    
+    "not-found": {
+        "notFoundContentTextH1": "Oops!",
+        "notFoundContentTextP": "Something went wrong.",
+        "notFoundContentTextSmall": "Looks like the page you are looking for is currently unavailable.",
+        "notFoundContentLink": "Go back home"
     },
 
     "homepage": {

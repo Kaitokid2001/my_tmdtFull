@@ -1,12 +1,54 @@
 {
     "navbar": {
         "menu": {
+            "electronicComponents": {
+                "header": "Linh Kiện",
+                "heatSink": "Tản Nhiệt",
+                "power": "Nguồn"
+            },
 
+            "screen": "Màn Hình",
+
+            "gamingGear": {
+                "mouseGaming": "Chuột Gaming",
+                "mouseOffice": "Chuột Văn Phòng",
+                "keyboardGaming": "Bàn Phím Gaming",
+                "keyboardOffice": "Bàn Phím Văn Phòng",
+                "wirelessHeadphones": "Tai Nghe Có Dây",
+                "wiredHeadphones": "Tai Nghe Không Dây"
+            },
+
+            "tableChair": {
+                "header": "Bàn Ghế",
+                "chairGaming": "Ghế Gaming",
+                "chairOffice": "Ghế Văn Phòng",
+                "chairErgonomic": "Ghế Công Thái Học",
+                "chairSwivel": "Ghế Chân Xoay",
+                "tableGaming": "Bàn Gaming",
+                "TableOffice": "Bàn Văn Phòng",
+                "tableLifting": "Bàn Nâng Hạ",
+                "T-shapedDesk": "Bàn Chữ T"
+            },
+
+            "accessory": {
+                "header": "Phụ Kiện",
+                "accessoryLaptop": "Phụ Kiện Laptop",
+                "accessoryHeatSink": "Phụ Kiện Tản Nhiệt",
+                "accessoryGear": "Phụ Kiện Gear",
+                "accessoryScreen": "Phụ Kiện Màn Hình",
+                "accessoryVGA&PSU": "Phụ Kiện VGA & PSU",
+                "armScreen": "ARM Màn Hình"
+            }
         },
 
         "author":{
             "login": "đăng nhập",
             "register": "đăng ký"
+        },
+
+        "search": {
+            "header": "Bạn đang tìm thứ gì ?",
+            "title": "Linh kiện ......"
         }
     },
 
@@ -37,10 +79,17 @@
         },
 
         "location": {
-            "header": "Địa chỉ hiện tại",
+            "header": "Địa chỉ cửa hàng",
             "topTitle": "Bản quyền",
             "endTitle": "Mọi quyền được bảo lưu."
         }
+    },
+
+    "not-found": {
+        "notFoundContentTextH1": "Ối!",
+        "notFoundContentTextP": "Đã xảy ra lỗi.",
+        "notFoundContentTextSmall": "Có vẻ như trang bạn đang tìm kiếm hiện không khả dụng.",
+        "notFoundContentLink": "Về trang chính"
     },
 
     "homepage": {

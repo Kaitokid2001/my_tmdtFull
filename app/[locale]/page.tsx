@@ -11,9 +11,9 @@ export default function Home({
   const t = useTranslations('homepage');
 
   return (
-    <PageDiv>Hello world
+    <PageDiv>
       <h1>{t('header')}</h1>
-      <h2>Xin</h2>
+      <h2>cc</h2>
     </PageDiv>
   );
 }

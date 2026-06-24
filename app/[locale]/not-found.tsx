@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { 
     NotFoundDivContainer,
     NotFoundContentText,
@@ -12,18 +13,19 @@ import {
 
 
 export default function NotFound() {
+  const t = useTranslations("not-found");
   return (
     <NotFoundDivContainer>
         <NotFoundContentText>
             <Image src="/bg.jpg" alt="404 Error" width={600} height={400} />
         </NotFoundContentText>
         <NotFoundContentText>
-          <NotFoundContentTextH1>Oops!</NotFoundContentTextH1>
-          <NotFoundContentTextP>Something went wrong.</NotFoundContentTextP>
+          <NotFoundContentTextH1>{t('notFoundContentTextH1')}</NotFoundContentTextH1>
+          <NotFoundContentTextP>{t('notFoundContentTextP')}</NotFoundContentTextP>
           <NotFoundContentTextSmall>
-            Looks like the page you are looking for is currentlyunavailable.
+            {t('notFoundContentTextSmall')}
           </NotFoundContentTextSmall>
-          <NotFoundContentLink href="/">Go back home</NotFoundContentLink>
+          <NotFoundContentLink href="/">{t('notFoundContentLink')}</NotFoundContentLink>
         </NotFoundContentText>
     </NotFoundDivContainer>
   );

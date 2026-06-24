@@ -7,6 +7,7 @@ import StyledComponentsRegistry from "../../lib/registry";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { routing } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
@@ -69,6 +70,10 @@ export const viewport = {
   maximumScale: 1,
 };
 
+export function generateStaticParams(){
+  return routing.locales.map((locale)=>({locale}));
+}
+
 export default async function RootLayout({
   children,
   params
@@ -83,6 +88,8 @@ export default async function RootLayout({
   }
 
   const messages = (await import(`@/messages/${locale}.json`)).default;
+
+  setRequestLocale(locale);
 
   return (
     <html
