@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 import { Search } from "@mui/icons-material";
 import {
@@ -13,7 +16,33 @@ import {
 
 export default function SearchNavbar() {
   const [openSearch, setOpenSearch] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const t = useTranslations("navbar");
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  const searchOverlay = (
+    <SidebarSearch $open={openSearch}>
+      <SidebarSearchDiv>
+        <h3>{t("search.header")}</h3>
+        <form>
+          <SearchFormDiv>
+            <Search />
+            <input type="text" placeholder="Search..." />
+          </SearchFormDiv>
+        </form>
+        <p>{t("search.title")}</p>
+      </SidebarSearchDiv>
+      <SidebarSearchDivDelete
+        onClick={() => setOpenSearch(false)}
+        title="Đóng tìm kiếm"
+      />
+    </SidebarSearch>
+  );
+
   return (
     <>
       <NavbarMenuSearch>
@@ -24,28 +53,11 @@ export default function SearchNavbar() {
           onChange={(e) => setOpenSearch(e.target.checked)}
         />
         <MenuCheckedSearch $checked={openSearch} htmlFor="search-toggle">
-          {/* Ở đây bạn có thể để icon search/hamburger */}
           <Search />
         </MenuCheckedSearch>
       </NavbarMenuSearch>
 
-      {/* Div dropdown open */}
-      <SidebarSearch $open={openSearch}>
-        <SidebarSearchDiv>
-          <h3>{t('search.header')}</h3>
-          <form>
-            <SearchFormDiv>
-              <Search />
-              <input type="text" placeholder="Search..." />
-            </SearchFormDiv>
-          </form>
-          <p>{t('search.title')}</p>
-        </SidebarSearchDiv>
-        <SidebarSearchDivDelete
-          onClick={() => setOpenSearch(false)}
-          title="Đóng tìm kiếm"
-        />
-      </SidebarSearch>
+      {mounted && createPortal(searchOverlay, document.body)}
     </>
   );
 }

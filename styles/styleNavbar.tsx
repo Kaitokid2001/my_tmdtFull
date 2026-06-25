@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 import { media } from './breakpoints';
 
@@ -383,7 +383,6 @@ export const NavbarButton = styled.button`
     position: relative;
     overflow: hidden;
     z-index: 1;
-
     
     &::before{
         content: '';
@@ -410,6 +409,13 @@ export const NavbarButton = styled.button`
         transform: scale(0.98);
     }
 `; 
+
+export const ButtonLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+`;
+
 
 export const NavbarMenuSearch = styled.div`
     position: relative;
@@ -449,16 +455,17 @@ export const MenuCheckedSearch = styled.label<{ $checked: boolean }>`
 
 //Sidebar search
 export const SidebarSearch = styled.div<{ $open: boolean }>`
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;            
+    left: 0;
+    right: 0;
     width: 100%;
     height: 30vh;
     background: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     border-radius: 60px;
-    z-index: 1003;
+    z-index: 3003;
 
     opacity: ${(p) => (p.$open ? 1 : 0)};
     pointer-events: ${(p) => (p.$open ? 'auto' : 'none')};
