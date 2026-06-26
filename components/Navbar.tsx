@@ -3,8 +3,8 @@
 import { useTranslations } from "next-intl";
 import LocaleSwitcher from "./LocaleSwitcher";
 
-import NavbarHiddenHamburger from "./NavbarHiddenHamburger";
-import SearchNavbar from "./SearchNavbar";
+import FuncNavbarHiddenHamburger from "./FuncNavbarHiddenHamburger";
+import FuncSearchNavbar from "./FuncSearchNavbar";
 import NavbarMenu from "./NavbarMenu"
 
 import {
@@ -20,13 +20,17 @@ export default function Navbar (){
 
     return(
         <NavbarContainer>
-            <NavbarHiddenHamburger/>
+            <FuncNavbarHiddenHamburger/>
             <NavbarContent>
                 <NavbarMenu/>
                 <NavbarContentMenu>
-                    <NavbarButton><ButtonLink href="/auth">{t('author.login')}</ButtonLink></NavbarButton>
-                    <NavbarButton>{t('author.register')}</NavbarButton> 
-                    <SearchNavbar/>
+                    <ButtonLink href="/auth">
+                        <NavbarButton>{t('author.login')}</NavbarButton>
+                    </ButtonLink>
+                    <ButtonLink href={"/register"}>
+                        <NavbarButton>{t('author.register')}</NavbarButton> 
+                    </ButtonLink>
+                    <FuncSearchNavbar/>
                     <LocaleSwitcher/>
                 </NavbarContentMenu>
             </NavbarContent>

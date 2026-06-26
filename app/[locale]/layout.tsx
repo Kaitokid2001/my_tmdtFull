@@ -95,6 +95,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       className={`${poppins.variable} antialiased`}
+      suppressHydrationWarning
     >
       <NextIntlClientProvider locale={locale} messages={messages}>
         <StyledComponentsRegistry>

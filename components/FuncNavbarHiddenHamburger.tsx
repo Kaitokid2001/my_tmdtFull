@@ -19,7 +19,7 @@ import {
   FooterMenuSidebar,
 } from "../styles/styleNavbar";
 
-export default function NavbarHiddenHamburger() {
+export default function FuncNavbarHiddenHamburger() {
   const t = useTranslations("navbar");
   const currentYear = new Date().getFullYear();
   const [checked, setChecked] = useState(false);

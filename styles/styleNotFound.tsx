@@ -8,11 +8,11 @@ export const NotFoundDivContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 0 auto;
 
     @media (${media.xl}) {
         flex-direction: column;
-        margin-top: 100px;
         padding: 100px 0 50px 0;
     }
 `;

@@ -14,7 +14,7 @@ import {
   SidebarSearchDivDelete,
 } from "../styles/styleNavbar";
 
-export default function SearchNavbar() {
+export default function FuncSearchNavbar() {
   const [openSearch, setOpenSearch] = useState(false);
   const [mounted, setMounted] = useState(false);
   const t = useTranslations("navbar");
