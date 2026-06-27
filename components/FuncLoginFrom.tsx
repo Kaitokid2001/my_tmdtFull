@@ -57,6 +57,17 @@ export default function FuncLoginFrom() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
+        {password && (
+          <EyeButton
+            type="button"
+            aria-label="Clear password"
+            onClick={() => setPassword("")}
+            title="Clear password"
+          >
+            <FontAwesomeIcon icon={faCircleXmark} />
+          </EyeButton>
+        )}
+
         <EyeButton
           type="button"
           aria-label={openEye ? "Hide password" : "Show password"}

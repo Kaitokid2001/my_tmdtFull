@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import { media } from './breakpoints';
 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 500px;
-    min-height: 100vh;
-    margin: 0 auto;
+    width: 100%;
+    min-height:100vh;
+    background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
 
     h2{
         text-align: center;
@@ -34,10 +35,20 @@ export const Container = styled.div`
     }
 `;
 
+export const Wrapper = styled.div`
+    width: 1000px;
+
+    @media (${media.lg}) {
+        width: 100vw;
+    }
+`;
+
 export const SocialDivButton = styled.div`
     display: flex;
     flex-direction: row;
     gap: 30px;
+    width: 100%;
+    justify-content: center;
 `;
 
 export const SocialButton = styled.button`
@@ -45,7 +56,7 @@ export const SocialButton = styled.button`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 236px;
+    width: 100%;
     padding: 12px 0;
     gap: 15px;
     background: #F9F8FF;
@@ -72,7 +83,7 @@ export const Separation = styled.p`
     span {
         position: relative;
         z-index: 1;
-        background: #fff;
+        background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
         padding: 0 0.9rem;
         font-size: 1.6rem;
         font-weight: 500;
@@ -94,6 +105,10 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
 `;
 
 export const InputWrapper = styled.div`
