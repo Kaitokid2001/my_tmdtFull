@@ -2,6 +2,7 @@
 
 import React, { useState} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslations } from "next-intl";
 import { faEye, faEyeSlash, faLock, faEnvelope, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -15,6 +16,7 @@ import {
 } from "@/styles/styleAuth";
 
 export default function FuncLoginFrom() {
+  const t = useTranslations("auth");
   const [openEye, setOpenEye] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +29,7 @@ export default function FuncLoginFrom() {
         </IconLeft>
         <StyledInput
           type="email"
-          placeholder="Email Address"
+          placeholder={t('login.inputEmail')}
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -51,7 +53,7 @@ export default function FuncLoginFrom() {
 
         <StyledInput
           type={openEye ? "text" : "password"}
-          placeholder="Password"
+          placeholder={t('login.inputPassword')}
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -78,9 +80,9 @@ export default function FuncLoginFrom() {
         </EyeButton>
       </InputWrapper>
 
-      <LinkText href="/#">Forgot Password ?</LinkText>
+      <LinkText href="/recoverPassword">{t('login.forgotPassword')}</LinkText>
 
-      <LoginButton type="submit">Login</LoginButton>
+      <LoginButton type="submit">{t('login.loginNow')}</LoginButton>
     </Form>
   );
 }

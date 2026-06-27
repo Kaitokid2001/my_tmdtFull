@@ -37,6 +37,10 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
     width: 1000px;
+    padding: 32px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
 
     @media (${media.lg}) {
         width: 100vw;
@@ -83,7 +87,7 @@ export const Separation = styled.p`
     span {
         position: relative;
         z-index: 1;
-        background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+        background: #fff;
         padding: 0 0.9rem;
         font-size: 1.6rem;
         font-weight: 500;
@@ -105,10 +109,6 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background: #fff;
-    border-radius: 20px;
-    padding: 32px;
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
 `;
 
 export const InputWrapper = styled.div`

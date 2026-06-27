@@ -52,6 +52,50 @@
         }
     },
 
+    "auth": {
+        "login": {
+            "header": "Login With",
+            "inputEmail": "Email Address",
+            "inputPassword": "Password",
+            "forgotPassword": "Forgot Password ?",
+            "p": "Don't have a account ?",
+            "loginNow": "Login",
+            "registerNow": "Register Now"
+        },
+
+        "recoverPassword": {
+            "header": "Change password",
+            "p": "Enter your old password and new password to update.",
+            "oldPassword": "Old Password",
+            "importOldPassword": "Enter your old password",
+            "newPassword": "New Password",
+            "importNewPassword": "Enter your new password",
+            "re-enterTheNewPassword": "Re-enter the new password",
+            "importRe-enterTheNewPassword": "Enter your re-enter the new Password",
+            "savePassword": "Save password"
+        },
+
+        "register": {
+            "header": "Create an account",
+            "p": "Fill in all the information to create an account.",
+            "firstName": "First Name",
+            "importFirstName": "Enter First Name",
+            "lastName": "Last Name",
+            "importLastName": "Enter Last Name",
+            "yearOld": "Year Old",
+            "importYearOld": "Enter Year Old",
+            "phone": "Phone",
+            "importPhone": "Enter Phone",
+            "email": "Email",
+            "importEmail": "Enter Email",
+            "password": "Password",
+            "importPassword": "Enter Password",
+            "re-enterPassword": "Re-enter password",
+            "importRe-enterPassword": "Re-enter password",
+            "registerButton": "Register"
+        }
+    },
+
     "footer": {
         "company": {
             "header" : "Company",

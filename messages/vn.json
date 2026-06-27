@@ -52,6 +52,50 @@
         }
     },
 
+    "auth": {
+        "login": {
+            "header": "Đăng nhập với",
+            "inputEmail": "Địa chỉ Email",
+            "inputPassword": "Mật khẩu",
+            "forgotPassword": "Lấy lại mật khẩu ?",
+            "p": "Bạn chưa có tài khoản ?",
+            "loginNow": "Đăng nhập",
+            "registerNow": "Đăng ký ngay"
+        },
+
+        "recoverPassword": {
+            "header": "Đổi mật khẩu",
+            "p": "Nhập mật khẩu cũ và mật khẩu mới để cập nhật",
+            "oldPassword": "Mật khẩu cũ",
+            "importOldPassword": "Nhập mật khẩu cũ",
+            "newPassword": "Mật khẩu mới",
+            "importNewPassword": "Nhập mật khẩu mới",
+            "re-enterTheNewPassword": "Nhập lại mật khẩu mới",
+            "importRe-enterTheNewPassword": "Nhập lại mật khẩu mới",
+            "savePassword": "Lưu mật khẩu"
+        },
+
+        "register": {
+            "header": "Tạo tài khoản mới",
+            "p": "Điền đầy đủ thông tin để tạo tài khoản",
+            "firstName": "Họ",
+            "importFirstName": "Nhập họ",
+            "lastName": "Tên",
+            "importLastName": "Nhập tên",
+            "yearOld": "Tuổi",
+            "importYearOld": "Nhập tuổi",
+            "phone": "Số điện thoại",
+            "importPhone": "Nhập số điện thoại",
+            "email": "Email",
+            "importEmail": "Nhập Email",
+            "password": "Mật khẩu",
+            "importPassword": "Nhập mật khẩu",
+            "re-enterPassword": "Nhập lại mật khẩu",
+            "importRe-enterPassword": "Nhập lại mật khẩu",
+            "registerButton": "Đăng ký"
+        }
+    },
+
     "footer": {
         "company": {
             "header" : "Công ty",
